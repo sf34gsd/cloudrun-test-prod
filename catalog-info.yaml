@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: ProofOfConcept
+metadata:
+  name: cloudrun-test-prod
+  title: Cloudrun Test Prod
+  description: Proof of concept for cloudrun-test-prod
+  annotations:
+    github.com/project-slug: sf34gsd/cloudrun-test-prod
+    poc.liven.ai/docker-image: gcr.io/deeplearning2-178817/cloudrun-test-prod:latest
+  tags:
+    - poc
+    - experimental
+  links:
+    - url: https://github.com/sf34gsd/cloudrun-test-prod
+      title: GitHub Repository
+      icon: github
+spec:
+  type: api
+  lifecycle: experimental
+  owner: ai-labs
+  repository: https://github.com/sf34gsd/cloudrun-test-prod
+  dockerImage: gcr.io/deeplearning2-178817/cloudrun-test-prod:latest
+  deploymentStatus: stopped
+  infrastructure:
+    provider: cloudrun
+    region: us-central1
+    serviceName: cloudrun-test-prod
+    resources:
+      cpu: 1
+      memory: 512Mi

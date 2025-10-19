@@ -1,0 +1,16 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'us-central1-docker.pkg.dev/deeplearning2-178817/deployments/cloudrun-test-prod:$SHORT_SHA'
+      - '-t'
+      - 'us-central1-docker.pkg.dev/deeplearning2-178817/deployments/cloudrun-test-prod:latest'
+      - '.'
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-central1-docker.pkg.dev/deeplearning2-178817/deployments/cloudrun-test-prod:$SHORT_SHA']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-central1-docker.pkg.dev/deeplearning2-178817/deployments/cloudrun-test-prod:latest']
+images:
+  - 'us-central1-docker.pkg.dev/deeplearning2-178817/deployments/cloudrun-test-prod:$SHORT_SHA'
+  - 'us-central1-docker.pkg.dev/deeplearning2-178817/deployments/cloudrun-test-prod:latest'
