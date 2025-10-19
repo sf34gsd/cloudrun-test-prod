@@ -20,7 +20,8 @@ spec:
   owner: ai-labs
   repository: https://github.com/sf34gsd/cloudrun-test-prod
   dockerImage: gcr.io/deeplearning2-178817/cloudrun-test-prod:latest
-  deploymentStatus: stopped
+  deploymentStatus: running
+  deploymentUrl: https://cloudrun-test-prod-es7g3can2q-uc.a.run.app
   infrastructure:
     provider: cloudrun
     region: us-central1
